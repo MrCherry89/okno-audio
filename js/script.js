@@ -298,4 +298,31 @@ $(document).ready(function () {
     $(".lang .line").addClass("ru");
     $(".lang .line").removeClass("en");
   });
+
+  $(".slider-nav-banner").on(
+    "beforeChange",
+    function (event, slick, currentSlide, nextSlide) {
+      const active = nextSlide + 1;
+
+      $(".active-res-left").text(`0${active - 1}`);
+      $(".active-res-right").text(`0${active + 1}`);
+    }
+  );
+
+  $(".icon-click").on("click", function (e) {
+    e.stopPropagation();
+    $(".search-form").addClass("show");
+  });
+
+  $(document).on("click", function () {
+    $(".search-form").removeClass("show");
+  });
+
+  // $(".search-form").on("click", function () {
+  //   $(".search-form").removeClass("show");
+  // });
+
+  $(".search-form").on("click", function (e) {
+    e.stopPropagation();
+  });
 });

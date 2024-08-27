@@ -615,3 +615,26 @@ main {
     color: #b22222;
   }
 }
+
+.custom-pagination-news-info,
+.custom-pagination-review {
+  border-top: 3px solid $red;
+  border-bottom: 0;
+  width: calc(100% - 40px);
+  .slick-dots {
+    li {
+      &.slick-active {
+        &:after {
+          top: -31px !important;
+        }
+      }
+    }
+  }
+}
+
+.custom-pagination-review {
+  width: auto;
+  @media (max-width: 767px) {
+    margin-top: 20px !important;
+  }
+}
