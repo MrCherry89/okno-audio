@@ -171,17 +171,14 @@ $(document).ready(function () {
     dots: true,
     slidesToShow: 4,
     slideToScroll: 1,
-    appendDots: $(".custom-pagination-brands .custom-dots"),
-    prevArrow: $(".custom-pagination-brands .custom-prev"),
-    nextArrow: $(".custom-pagination-brands .custom-next"),
-    customPaging: function (slider, i) {
-      return "<button>" + ("0" + (i + 1)).slice(-2) + "</button>";
-    },
+    prevArrow: $(".brands-slider-wrap .slider-navigation .slick-prev"),
+    nextArrow: $(".brands-slider-wrap .slider-navigation .slick-next"),
     responsive: [
       {
         breakpoint: 1201,
         settings: {
           slidesToShow: 1,
+          arrows: true,
           variableWidth: true,
           infinite: false,
         },
@@ -247,6 +244,13 @@ $(document).ready(function () {
     }
   );
 
+  $(".slider-nav-banner").on(
+    "init",
+    function (event, slick, currentSlide, nextSlide) {
+      $(".progress-bar").addClass("animated");
+    }
+  );
+
   $(".slider-for-banner").slick({
     slidesToShow: 1,
     slidesToScroll: 1,
@@ -262,6 +266,8 @@ $(document).ready(function () {
     dots: true,
     slidesToShow: 3,
     slideToScroll: 1,
+    autoplay: true,
+    autoplaySpeed: 2000,
     appendDots: $(".home-banner .custom-pagination-banner .custom-dots"),
     prevArrow: $(".home-banner .custom-pagination-banner .custom-prev"),
     nextArrow: $(".home-banner .custom-pagination-banner .custom-next"),
@@ -306,6 +312,20 @@ $(document).ready(function () {
 
       $(".active-res-left").text(`0${active - 1}`);
       $(".active-res-right").text(`0${active + 1}`);
+
+      $(".progress-bar").removeClass("animated");
+
+      $(".pagination-numbers li")
+        .removeClass("active")
+        .eq(nextSlide)
+        .addClass("active");
+    }
+  );
+
+  $(".slider-nav-banner").on(
+    "afterChange",
+    function (event, slick, currentSlide, nextSlide) {
+      $(".progress-bar").addClass("animated");
     }
   );
 
