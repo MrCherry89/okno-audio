@@ -330,6 +330,11 @@ main {
   -ms-flex-direction: column;
   flex-direction: column;
   max-width: 460px;
+  border: 2px solid #fff;
+  transition: 0.3s;
+}
+.product-item:hover {
+  border-color: #ce2730;
 }
 .product-item .img-wrap {
   display: -webkit-box;
@@ -436,6 +441,20 @@ main {
   background-repeat: no-repeat;
   background-position: center center;
   z-index: -1;
+  transition: 0.3s;
+}
+.info-item .img-wrap:hover:after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url(../img/shadow-red.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  z-index: -1;
 }
 .info-item .img-wrap img {
   max-width: 100%;
@@ -444,32 +463,27 @@ main {
 }
 .info-item .text-wrap {
   padding: 30px 30px 40px;
+  min-height: 140px;
 }
 @media (max-width: 1024px) {
   .info-item .text-wrap {
     padding: 20px;
-    min-height: 80px;
-  }
-}
-.info-item .text-wrap span {
-  display: inline-block;
-  color: white;
-  font-size: 18px;
-}
-@media (max-width: 1024px) {
-  .info-item .text-wrap span {
-    font-size: 16px;
+    min-height: 120px;
   }
 }
 .info-item .text-wrap .name {
-  color: #ce2730;
-  font-size: 18px;
-  display: inline;
+  max-width: 280px;
 }
-@media (max-width: 1024px) {
-  .info-item .text-wrap .name {
-    font-size: 16px;
-  }
+.info-item .text-wrap .name span {
+  display: inline;
+  font-size: 18px;
+  line-height: 24px;
+}
+.info-item .text-wrap .name span.red {
+  color: #ce2730;
+}
+.info-item .text-wrap .name span.white {
+  color: white;
 }
 
 .slick-track {
@@ -1177,13 +1191,15 @@ main {
   color: #ce2730;
 }
 .review-wrap .review-info .links a.red-link:hover {
-  border-color: #ce2730;
+  border-color: white;
+  color: white;
 }
 .review-wrap .review-info .links a.white-link {
   color: white;
 }
 .review-wrap .review-info .links a.white-link:hover {
-  border-color: white;
+  border-color: #ce2730;
+  color: #ce2730;
 }
 .review-wrap .review-info .texts {
   margin: 30px 0;
@@ -1589,8 +1605,12 @@ main {
   color: white;
   transition: 0.3s;
 }
+.new-arrivals .top-info .info-buttons button:hover {
+  border-color: white;
+}
 .new-arrivals .top-info .info-buttons button.active {
   background: #ce2730;
+  border-color: #ce2730;
   color: white;
 }
 .new-arrivals .top-info .arrivals-form {
@@ -1815,6 +1835,11 @@ main {
   z-index: 0;
   margin-top: -10px;
 }
+@media (max-width: 767px) {
+  .brands-wrap {
+    margin-bottom: 0;
+  }
+}
 .brands-wrap:after {
   content: "";
   background: url(../img/brends-bg.png);
@@ -1978,6 +2003,12 @@ main {
   position: relative;
   z-index: 0;
   margin-bottom: 60px;
+  min-width: 343px;
+}
+@media (max-width: 1500px) {
+  .brands-slider-wrap .brands-slider .item {
+    min-width: auto;
+  }
 }
 .brands-slider-wrap .brands-slider .item .style-img {
   position: absolute;
@@ -2260,6 +2291,10 @@ main {
   color: white;
   border-radius: 8px 8px 0 0;
   border-bottom: 0;
+}
+.news-info-wrap .wrapper .news-info .read:hover {
+  border-color: #ce2730;
+  color: #ce2730;
 }
 @media (max-width: 1200px) {
   .news-info-wrap .wrapper .news-info .read {

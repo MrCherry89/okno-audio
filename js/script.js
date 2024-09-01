@@ -171,16 +171,24 @@ $(document).ready(function () {
     dots: true,
     slidesToShow: 4,
     slideToScroll: 1,
+    variableWidth: true,
+    infinite: false,
     prevArrow: $(".brands-slider-wrap .slider-navigation .slick-prev"),
     nextArrow: $(".brands-slider-wrap .slider-navigation .slick-next"),
     responsive: [
+      {
+        breakpoint: 1501,
+        settings: {
+          slidesToShow: 4,
+          arrows: false,
+          variableWidth: false,
+        },
+      },
       {
         breakpoint: 1201,
         settings: {
           slidesToShow: 1,
           arrows: true,
-          variableWidth: true,
-          infinite: false,
         },
       },
       {
