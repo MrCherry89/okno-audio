@@ -330,7 +330,7 @@ main {
   -ms-flex-direction: column;
   flex-direction: column;
   max-width: 460px;
-  border: 2px solid #fff;
+  border: 2px solid transparent;
   transition: 0.3s;
 }
 .product-item:hover {
@@ -414,7 +414,7 @@ main {
 }
 .product-item .text-wrap .price-wrap .red-btn {
   width: 55%;
-  margin-right: -20px;
+  margin-right: -22px;
   white-space: nowrap;
 }
 

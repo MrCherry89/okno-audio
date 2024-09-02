@@ -135,6 +135,7 @@ $(document).ready(function () {
     slidesToShow: 1,
     slidesToScroll: 1,
     arrows: false,
+    infinite: true,
     asNavFor: ".slider-nav",
   });
   $(".slider-nav").slick({
@@ -143,6 +144,7 @@ $(document).ready(function () {
     centerMode: true,
     centerPadding: 0,
     dots: true,
+    infinite: true,
     slidesToShow: 5,
     slideToScroll: 1,
     appendDots: $(".custom-pagination-review .custom-dots"),
